@@ -1,0 +1,101 @@
+.font-size {
+    font-size: 12px;
+}
+
+:host {
+    .caret {
+        position: relative;
+        width: 100%;
+        display: block;
+        text-align: right;
+    }
+    .item-name {
+        // width: 100%;
+        width: 214px;
+    }
+    #sidebar {
+        width: 250px;
+        position: fixed;
+        top: 56px;
+        bottom: 0;
+        background: #222F3C;
+        box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+        z-index: 999;
+        -ms-overflow-y: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+        .mat-nav-list {
+            width: 100%;
+            a {
+                .mat-icon {
+                    margin-right: 0px;
+                    margin-top: 5px;
+                    font-size: 17px;
+                }
+                display: block;
+            }
+            .active {
+                background: #31A2FE;
+                color: #fff !important;
+            }
+        }
+        mat-nav-list {
+            a {
+                padding: 5px;
+                display: block;
+                color: #91a6bb !important;
+                &:hover {
+                    background: #31A2FE;
+                    color: #fff !important;
+                }
+            }
+            .nested-menu {
+                .nested {
+                    list-style-type: none;
+                }
+                .submenu {
+                    display: none;
+                    height: 0;
+                }
+                & .expand {
+                    &.submenu {
+                        display: block;
+                        list-style-type: none;
+                        height: auto;
+                        background: rgb(28, 39, 49);
+                        position: relative !important;
+                        margin-left: -20px !important;
+                        margin: 0;
+                        li {
+                            a {
+                                /* span {
+                                    position: relative !important;
+                                    margin-left: -22px !important;
+                                    width: 0;
+                                    height: 0;
+                                    border-top: 30px solid transparent;
+                                    border-bottom: 30px solid transparent;
+                                    border-left: 18px solid rgb(28, 39, 49);
+                                    padding-right: 8px;
+                                } */
+                                padding: 5px;
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1920px) {
+    #sidebar {
+        left: -250px;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -mos-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+}

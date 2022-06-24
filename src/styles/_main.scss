@@ -1,0 +1,79 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Fontil Sans';
+    background-color: #ECF0F5;
+}
+
+.main-container {
+    position: absolute;
+    top: 20px;
+    left: 250px;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    min-width: 320px;
+}
+
+
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+.buttonAdd {
+    position: inherit;
+    float: right;
+    right: 0px;
+    top: 0px;
+}
+
+.container {
+    background: whitesmoke;
+    display: flex;
+    margin-bottom: 0px;
+    padding-top: 40px;
+    .item {
+        flex: 1 1 5em !important;
+        margin-left: 10px !important;
+    }
+}
+
+
+/* Tabla responsiva */
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    // max-height: 100vh;
+    overflow: hidden;
+}
+
+.mat-table {
+    overflow: hidden;
+}
+
+.mat-table {
+    background-color: rgba(255, 255, 255, 0.959);
+    overflow: auto;
+}
+
+.mat-header-cell,
+.mat-cell {
+    @media (max-width: 1178px) {
+        min-width: 100px;
+    }
+}
+
+.mat-form-field-underline {
+    background-color: transparent;
+}
+
+.mat-paginator {
+    background-color: white;
+}

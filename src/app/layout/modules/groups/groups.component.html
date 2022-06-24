@@ -1,0 +1,40 @@
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start" fxLayoutGap="20px" fxLayoutGap.xs="0">
+  <div fxFlex="50">
+    <mat-card>
+    <mat-form-field>
+        <input matInput (keyup)='applyFilter($event)' placeholder="Buscar" #filter maxlength="100">
+        <mat-hint align="end">minimo dos caracteres</mat-hint>
+    </mat-form-field>
+      <div class="example-container">
+        <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="groupsTemp"
+        [cdkDropListConnectedTo]="[doneList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of groupsTemp" cdkDrag>{{item.name}}</div>
+      </div>
+      </div>
+
+  </mat-card>
+  </div>
+
+  <div fxFlex="50">
+    <mat-card>
+      <h3 mat-card-title>{{ groupName }}</h3>
+      <button style="margin-right: 15px;" mat-raised-button color="primary" (click)="selectAll()">Seleccionar todos</button>
+      <button mat-raised-button color="warn" (click)="clean()">Limpiar</button>
+    <mat-selection-list  #allSelected   [(ngModel)]="selectedEmployees" class="example-list" cdkDropList
+    #doneList="cdkDropList"  [cdkDropListData]="employees"
+    [cdkDropListConnectedTo]="[todoList]" (cdkDropListDropped)="drop($event)">
+      <mat-list-option *ngFor="let employe of employees" [value]="employe.name"   checkboxPosition="before" >
+        {{employe.name}}
+      </mat-list-option>
+    </mat-selection-list>
+
+  </mat-card>
+
+  <button mat-raised-button color="warn" (click)="continue()">Continuar</button>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+[{
+        "name": "inicio",
+        "icon": "inicio",
+        "menu": "home",
+        "class": "inicio",
+        "role": ["admin"],
+        "sidebar": true
+    },
+    {
+      "name": "empleados",
+      "icon": "empleados",
+      "menu": "employees",
+      "class": "empleados",
+      "role": ["admin"],
+      "sidebar": true
+  },
+  {
+    "name": "grupos",
+    "icon": "grupos",
+    "menu": "groups",
+    "class": "grupos",
+    "role": ["admin"],
+    "sidebar": true
+}
+]

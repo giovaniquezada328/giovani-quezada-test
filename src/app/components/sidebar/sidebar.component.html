@@ -1,0 +1,33 @@
+<div id="sidebar">
+    <mat-nav-list>
+        <div *ngFor="let resul of menu">
+
+            <div *ngFor="let rol of resul.role">
+                <a *ngIf="resul.menu != null && rol === role" mat-list-item [routerLinkActive]="'active'" routerLink="/{{resul.menu}}" class="font-size" (click)="toggleSidebar()">
+               {{ resul.name }}
+                </a>
+            </div>
+
+            <div *ngFor="let rol of resul.role">
+                <div *ngIf="resul.menu === null && rol === role" class="nested-menu">
+                    <a mat-list-item *ngIf="resul.sidebar" (click)="addExpandClass(resul.class)" (click)="resul.collapse = !resul.collapse" class="font-size">
+                         <span class="item-name">{{ resul.name }}</span>
+                        <mat-icon class="caret sidenav-icon">{{resul.collapse? 'keyboard_arrow_down': 'keyboard_arrow_right'}}</mat-icon>
+                    </a>
+                    <ul class="nested submenu" [class.expand]="showMenu === resul.class">
+                        <li *ngFor="let resul2 of resul.submodule">
+                            <div *ngIf="resul2.sidebar">
+                                <div *ngFor="let rol of resul2.role">
+                                    <a *ngIf="rol === role " mat-list-item [routerLinkActive]="'active'" routerLink="/{{resul2.menu}}" class="font-size" (click)="toggleSidebar()">
+                                        <span class="arrow-right"></span>
+                                        <mat-icon class="sidenav-icon">{{resul2.icon}}</mat-icon> {{resul2.name}}</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </mat-nav-list>
+  </div>
+

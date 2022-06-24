@@ -1,0 +1,83 @@
+:host {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    mat-toolbar {
+        background-color: #FFF !important;
+    }
+    .date {
+        font-size: 12px;
+    }
+    .app-logo{
+        width: 125px;
+    }
+    .version {
+        margin: 0px;
+        font-size: 10px;
+        padding: 0px;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+        margin-top: -15px;
+        color: #000;
+        text-decoration: none !important;
+    }
+    @media (max-width: 575.98px) {
+        .app-logo {
+            width: 100px;
+        }
+        .date {
+            font-size: 10px;
+        }
+        .version {
+            font-size: 7px;
+        }
+    }
+}
+
+.nav-brand {
+    width: 240px;
+    margin-top: 25px;
+    text-align: center;
+    @media (max-width: 575.98px) {
+        width: 120px;
+    }
+}
+
+.topnav-icon {
+    text-decoration: none;
+    display: flex;
+    color: #fff;
+}
+
+.nav-spacer {
+    flex: 1 1 auto;
+}
+
+.visible-md {
+    display: none;
+}
+
+.visible-sm {
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    .visible-md {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .visible-sm {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hidden-sm {
+        display: none;
+    }
+}
